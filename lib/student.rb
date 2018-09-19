@@ -52,7 +52,10 @@ class Student
     self.new_from_db(DB[:conn].execute(sql,name) )
   end
 
-
+  def update 
+    sql = 'update students set name = ?, grade = ? where id = ?'
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
+  end 
 
 
 
