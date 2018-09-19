@@ -53,7 +53,7 @@ class Student
     sql = <<-sql
       select * from students where name = ?
       sql
-    self.new_from_db(DB[:conn].execute(sql,name) )
+    self.new_from_db(DB[:conn].execute(sql,name).first )
   end
 
   def update
